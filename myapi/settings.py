@@ -37,6 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Third-party apps.
+    'rest_framework',
+    'rest_framework.authtoken',
+
+    # Local Apps.
+    'myapi.core'
+
 ]
 
 MIDDLEWARE = [
@@ -66,6 +74,12 @@ TEMPLATES = [
         },
     },
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+}
 
 WSGI_APPLICATION = 'myapi.wsgi.application'
 
